@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Costumes from "./pages/Costumes";
 import AboutUs from "./pages/AboutUs";
@@ -11,7 +11,6 @@ import './styles.css';
 function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Router>
         <Navbar/>
         <Routes>
           <Route path="/" element={<Home/>}/>
@@ -20,7 +19,6 @@ function App() {
           <Route path="/jobs" element={<Jobs/>}/>
           <Route path="/blog" element={<Blog/>}/>
         </Routes>
-      </Router>
     </BrowserRouter> 
   );
 }
