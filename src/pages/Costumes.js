@@ -8,22 +8,22 @@ const Costumes = () => {
       <header>
         <div id="costume-demo-header" className="column four">
           <section>
-            <img src="/assets/Images/mens costume sectin.jpg" alt="Men's Costumes" />
+            <img src="assets/Images/mens costume sectin.jpg" alt="Men's Costumes" />
             <h2>Men's Costumes</h2>
           </section>
 
           <section>
-            <img src="/assets/Images/womens section.jpg" alt="Women's Costumes" />
+            <img src="assets/Images/womens section.jpg" alt="Women's Costumes" />
             <h2>Women's Costumes</h2>
           </section>
 
           <section>
-            <img src="/assets/Images/chidlren section.jpg" alt="Children's Costumes" />
+            <img src="assets/Images/chidlren section.jpg" alt="Children's Costumes" />
             <h2>Children's Costumes</h2>
           </section>
 
           <section>
-            <img src="/assets/Images/pets ections.jpg" alt="Pet Costumes" />
+            <img src="assets/Images/pets ections.jpg" alt="Pet Costumes" />
             <h2>Pet Costumes</h2>
           </section>
         </div>
@@ -39,7 +39,7 @@ const Costumes = () => {
 
           <div className="column three gallery" id="costume-gallery">
             <CostumeCard
-              image="/assets/Images/zombie costume.jpg"
+              image="assets/Images/zombie costume.jpg"
               name="Zombie Cheerleader"
               price="29.99"
               size="M"
@@ -47,7 +47,7 @@ const Costumes = () => {
             />
 
             <CostumeCard
-              image="/assets/Images/vampire costume.jpg"
+              image="assets/Images/vampire costume.jpg"
               name="Vampire Knight"
               price="39.99"
               size="L"

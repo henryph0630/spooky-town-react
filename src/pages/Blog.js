@@ -8,7 +8,7 @@ const Blog = () => {
       <h2>Blog</h2>
 
       <BlogPostCard
-        image="/assets/Images/ahlloween blog.jpg"
+        image="assets/Images/ahlloween blog.jpg"
         title="Halloween is Here!"
         author="John Spookey"
         link="/blog/halloween"
@@ -16,7 +16,7 @@ const Blog = () => {
       />
 
       <BlogPostCard
-        image="/assets/Images/decortaion.jpg"
+        image="assets/Images/decortaion.jpg"
         title="Daily Decoration Idea"
         author="Jack O'Lantarn"
         link="/blog/decor"
