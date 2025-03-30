@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/spooky-town-react/static/css/main.569589cd.css",
+    "main.js": "/spooky-town-react/static/js/main.9d43ec6d.js",
+    "index.html": "/spooky-town-react/index.html",
+    "main.569589cd.css.map": "/spooky-town-react/static/css/main.569589cd.css.map",
+    "main.9d43ec6d.js.map": "/spooky-town-react/static/js/main.9d43ec6d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.569589cd.css",
+    "static/js/main.9d43ec6d.js"
+  ]
+}
