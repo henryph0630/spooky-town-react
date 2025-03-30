@@ -31,7 +31,7 @@ const Jobs = () => {
 
           <section>
             <h2>Employee Testimonials</h2>
-            <img src="/assets/Images/video play rs.jpg" alt="Testimonial Video" />
+            <img src="assets/Images/video play rs.jpg" alt="Testimonial Video" />
           </section>
         </section>
 
