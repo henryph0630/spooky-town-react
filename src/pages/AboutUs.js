@@ -37,8 +37,8 @@ const AboutUs = () => {
       <div className="column three">
         <section id="team-pics">
           <h2>Contact Us</h2>
-          <img src="assets/Images/email icon rs.png" alt="Email Icon"/>
-          <img src="assets/Images/phone icon rs.png" alt="Phone Icon"/>
+          <img src={`${process.env.PUBLIC_URL}/assets/Images/email icon rs.png`} alt="Email Icon"/>
+          <img src="public/assets/Images/phone icon rs.png" alt="Phone Icon"/>
           <img src="assets/Images/twitter icon ts.png" alt="Twitter Icon"/>
           <img src="assets/Images/facebook icon rs.png" alt="Facebook Icon"/>
           <img src="assets/Images/instagram icon rs.png" alt="Instagram Icon"/>
