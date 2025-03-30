@@ -14,7 +14,7 @@ const Navbar = () => {
         ☰
       </button>
       <div id="nav-links" className={isOpen ? "nav-open" : "nav-closed"}>
-        <Link to="/">Home</Link>
+        <Link to="">Home</Link>
         <Link to="/costumes">Costumes</Link>
         <Link to="/about">About Us</Link>
         <Link to="/jobs">Jobs</Link>
