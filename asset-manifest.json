@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/spooky-town-react/static/css/main.569589cd.css",
-    "main.js": "/spooky-town-react/static/js/main.5183bf5a.js",
+    "main.js": "/spooky-town-react/static/js/main.4e23b5b2.js",
     "index.html": "/spooky-town-react/index.html",
     "main.569589cd.css.map": "/spooky-town-react/static/css/main.569589cd.css.map",
-    "main.5183bf5a.js.map": "/spooky-town-react/static/js/main.5183bf5a.js.map"
+    "main.4e23b5b2.js.map": "/spooky-town-react/static/js/main.4e23b5b2.js.map"
   },
   "entrypoints": [
     "static/css/main.569589cd.css",
-    "static/js/main.5183bf5a.js"
+    "static/js/main.4e23b5b2.js"
   ]
 }
