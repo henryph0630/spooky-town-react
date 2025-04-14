@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CostumeCard from "../components/CostumeCard";
+import AddCostumeForm from "../components/AddCostumeForm";
 import "../styles.css";
 
 const Costumes = () => {
@@ -45,12 +46,12 @@ const Costumes = () => {
             <button className="dropbtn">Theme</button>
             <button className="dropbtn">Price</button>
           </section>
-
+          <AddCostumeForm onAdd={(newCostume) => setCostumes((prev) => [...prev, newCostume])} />
           <div className="column three gallery" id="costume-gallery">
             {costumes.map((item) => (
               <CostumeCard
                 key={item.id}
-                image={`https://spooky-town-api.onrender.com//${item.img_name}`} // 🔁 Update this URL
+                image={`https://spooky-town-api.onrender.com//${item.img_name}`}
                 name={item.name}
                 price={item.price}
                 size={item.Size}
