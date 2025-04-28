@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles.css";
 
-const AddCostumeForm = ({ onAdd }) => {
+const AddCostumeForm = ({ onAdd, editingCostume, onEditSubmit }) => {
   const [formData, setFormData] = useState({
     id: "",
     name: "",
@@ -14,6 +14,13 @@ const AddCostumeForm = ({ onAdd }) => {
 
   const [status, setStatus] = useState("");
   const [errors, setErrors] = useState({});
+
+  useEffect(() => {
+    if (editingCostume) {
+      setFormData(editingCostume);
+      setStatus("Editing costume ID: " + editingCostume.id);
+    }
+  }, [editingCostume]);
 
   const validate = () => {
     const newErrors = {};
@@ -37,36 +44,41 @@ const AddCostumeForm = ({ onAdd }) => {
     e.preventDefault();
     if (!validate()) return;
 
-    fetch("https://spooky-town-api.onrender.com/api/costumes", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData)
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
-          setStatus("Costume added successfully!");
-          onAdd(data.newCostume); // update parent list
-          setFormData({
-            id: "",
-            name: "",
-            price: "",
-            category: "",
-            description: "",
-            Size: "",
-            img_name: ""
-          });
-          setErrors({});
-        } else {
-          setStatus("Failed: " + data.error);
-        }
+    if (editingCostume) {
+      onEditSubmit(formData);
+      setStatus("Costume updated!");
+    } else {
+      fetch("https://spooky-town-api.onrender.com/api/costumes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
       })
-      .catch(() => setStatus("Server error. Try again later."));
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.success) {
+            setStatus("Costume added successfully!");
+            onAdd(data.newCostume);
+            setFormData({
+              id: "",
+              name: "",
+              price: "",
+              category: "",
+              description: "",
+              Size: "",
+              img_name: ""
+            });
+            setErrors({});
+          } else {
+            setStatus("Failed: " + data.error);
+          }
+        })
+        .catch(() => setStatus("Server error. Try again later."));
+    }
   };
 
   return (
     <section className="form-section">
-      <h2>Add a Costume</h2>
+      <h2>{editingCostume ? "Edit Costume" : "Add a Costume"}</h2>
       <form onSubmit={handleSubmit} className="form-grid">
         {["id", "name", "price", "category", "description", "Size", "img_name"].map((field) => (
           <div key={field}>
@@ -76,11 +88,12 @@ const AddCostumeForm = ({ onAdd }) => {
               name={field}
               value={formData[field]}
               onChange={handleChange}
+              disabled={field === "id" && editingCostume} // prevent changing ID on edit
             />
             {errors[field] && <p className="error-text">{errors[field]}</p>}
           </div>
         ))}
-        <button type="submit">Submit</button>
+        <button type="submit">{editingCostume ? "Update" : "Submit"}</button>
         <p className="status-msg">{status}</p>
       </form>
     </section>
